@@ -31,7 +31,7 @@ public class App {
 		homePage = new Home(driver);
 		String homePageTitle = homePage.getTitle();
 		assertEquals(homePageTitle, "QA Consulting");
-		homePage.clickSolutionsLink();
+		//homePage.clickSolutionsLink();
 
 		solutionsPage = new Solutions(driver);
 		String solutionsHeader = solutionsPage.getHeader();
