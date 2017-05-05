@@ -22,16 +22,16 @@ public class Login {
 	public void getEmailInput(String text) {
 		driver.findElement(email).sendKeys(text);
 	}
-	public String getEmailTextBoxText() {
-		return driver.findElement(email).getText();
-	}
+//	public String getEmailTextBoxText() {
+//		return driver.findElement(email).getText();
+//	}
 	
 	public void getPasswordInput(String text) {
 		driver.findElement(password).sendKeys(text);
 	}
-	public String getPasswordTextBoxText() {
-		return driver.findElement(password).getText();
-	}
+//	public String getPasswordTextBoxText() {
+//		return driver.findElement(password).getText();
+//	}
 	
 	public void submitLogin() {
 		driver.findElement(loginSubmit).click();

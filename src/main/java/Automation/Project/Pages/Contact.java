@@ -20,6 +20,9 @@ public class Contact {
 		Select oSelect = new Select(driver.findElement(heading));
 		oSelect.selectByValue("1");
 	}
+	public String getSubjectHeading() {
+		return driver.findElement(heading).getText();
+	}
 	public void getEmailInput(String text) {
 		driver.findElement(from).sendKeys(text);
 	}

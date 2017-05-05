@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13" started-at="2017-05-05T09:27:33Z" finished-at="2017-05-05T09:27:33Z">
+  <suite name="Default suite" duration-ms="28819" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13" started-at="2017-05-05T09:27:33Z" finished-at="2017-05-05T09:27:33Z">
+    <test name="Default test" duration-ms="28819" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:19Z">
+      <class name="Automation.Project.App">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Automation.Project.App@184cf7cf]" name="setup" is-config="true" duration-ms="290" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T16:59:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testHomeToContact()[pri:1, instance:Automation.Project.App@184cf7cf]" name="testHomeToContact" duration-ms="13517" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomeToContact -->
+        <test-method status="PASS" signature="testHomeToLoginandLogout()[pri:2, instance:Automation.Project.App@184cf7cf]" name="testHomeToLoginandLogout" duration-ms="12014" started-at="2017-05-05T17:00:04Z" finished-at="2017-05-05T17:00:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomeToLoginandLogout -->
+        <test-method status="PASS" signature="testHomeNewsletter()[pri:3, instance:Automation.Project.App@184cf7cf]" name="testHomeNewsletter" duration-ms="2959" started-at="2017-05-05T17:00:16Z" finished-at="2017-05-05T17:00:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomeNewsletter -->
+      </class> <!-- Automation.Project.App -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

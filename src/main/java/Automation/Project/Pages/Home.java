@@ -6,8 +6,9 @@ import org.openqa.selenium.WebDriver;
 public class Home {
 	WebDriver driver;
 	
+	By home = By.xpath("//*[@id='header_logo']/a");
 	By login = By.className("login");
-	By tshirts = By.xpath("//=*[@id='block_top_menu']/ul/li[3]/a");
+	By products = By.xpath("//*[@id='block_top_menu']/ul/li[1]/a");
 	By contact = By.xpath("//*[@id='contact-link']/a");
 	By newsletter = By.id("newsletter-input");
 	By newsletterButton = By.name("submitNewsletter");
@@ -15,12 +16,15 @@ public class Home {
 	public Home(WebDriver driver) {
 		this.driver = driver;
 	}
+	public void home(){
+		driver.findElement(home).click();
+	}
 
 	public void clickLogin() {
 		driver.get(driver.findElement(login).getAttribute("href"));
 	}
-	public void clickTshirts() {
-		driver.get(driver.findElement(tshirts).getAttribute("href"));
+	public void clickProducts() {
+		driver.get(driver.findElement(products).getAttribute("href"));
 	}
 	public void clickContact() {
 		driver.get(driver.findElement(contact).getAttribute("href"));
@@ -35,8 +39,6 @@ public class Home {
 		driver.findElement(newsletterButton).click();
 	}
 
-	
-	
 	public String getTitle() {
 		return driver.getTitle();
 	}
