@@ -1,4 +1,5 @@
 # AutomationProject
+### A automated testing project using Selenium WebDriver, Junit/TestNG and Extent Reporting.
 
 Created four user flow scenarios and created tests for each one.
 
