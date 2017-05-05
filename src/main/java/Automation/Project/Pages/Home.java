@@ -10,6 +10,8 @@ public class Home {
 	By tshirts = By.xpath("//=*[@id='block_top_menu']/ul/li[3]/a");
 	By contact = By.xpath("//*[@id='contact-link']/a");
 	By newsletter = By.id("newsletter-input");
+	By newsletterButton = By.name("submitNewsletter");
+	
 	public Home(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -23,10 +25,18 @@ public class Home {
 	public void clickContact() {
 		driver.get(driver.findElement(contact).getAttribute("href"));
 	}
-	public void getNewletterTextBox() {
-		driver.findElement(newsletter);
+	public void getNewletterTextBox(String text) {
+		driver.findElement(newsletter).sendKeys(text);
+	}
+	public String getNewletterTextBoxText() {
+		return driver.findElement(newsletter).getText();
+	}
+	public void submitNewsletter() {
+		driver.findElement(newsletterButton).click();
 	}
 
+	
+	
 	public String getTitle() {
 		return driver.getTitle();
 	}
