@@ -1,9 +1,9 @@
 # AutomationProject
 ### A automated testing project using Selenium WebDriver, Junit/TestNG and Extent Reporting.
 
-Created four user flow scenarios and created tests for each one.
+Creating four user flow scenarios and creating tests for each one.
 
-[Test website used](http://automationpractice.com/index.php)
+[Test website](http://automationpractice.com/index.php)
 
 ## Requirements
 
