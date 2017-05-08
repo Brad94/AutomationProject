@@ -6,7 +6,7 @@
       <class name="Automation.Project.App">
         <methods>
           <include name="setup"/>
-          <include name="testHomeToLoginandLogout"/>
+          <include name="testHomeToContact"/>
         </methods>
       </class> <!-- Automation.Project.App -->
     </classes>

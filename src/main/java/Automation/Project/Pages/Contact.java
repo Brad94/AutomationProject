@@ -11,7 +11,7 @@ public class Contact {
 	By heading = By.name("id_contact");
 	By from = By.name("from");
 	By orderID = By.name("id_order");
-	By message = By.name("message");
+	By message = By.id("message");
 	
 	public Contact(WebDriver driver) {
 		this.driver = driver;
@@ -27,21 +27,21 @@ public class Contact {
 		driver.findElement(from).sendKeys(text);
 	}
 	public String getEmailTextBoxText() {
-		return driver.findElement(from).getText();
+		return driver.findElement(By.name("from")).getAttribute("value");
 	}
 	
 	public void getOrderInput(String text) {
 		driver.findElement(orderID).sendKeys(text);
 	}
 	public String getOrderTextBoxText() {
-		return driver.findElement(orderID).getText();
+		return driver.findElement(orderID).getAttribute("value");
 	}
 	
 	public void getMessageInput(String text) {
 		driver.findElement(message).sendKeys(text);
 	}
 	public String getMessageTextBoxText() {
-		return driver.findElement(message).getText();
+		return driver.findElement(message).getAttribute("value");
 	}
 	
 	

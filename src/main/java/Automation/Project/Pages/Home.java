@@ -33,12 +33,11 @@ public class Home {
 		driver.findElement(newsletter).sendKeys(text);
 	}
 	public String getNewletterTextBoxText() {
-		return driver.findElement(newsletter).getText();
+		return driver.findElement(newsletter).getAttribute("value");
 	}
 	public void submitNewsletter() {
 		driver.findElement(newsletterButton).click();
 	}
-
 	public String getTitle() {
 		return driver.getTitle();
 	}

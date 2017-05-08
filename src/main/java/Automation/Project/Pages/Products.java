@@ -34,10 +34,7 @@ public class Products {
 	}
 	public void proceedToCheckout() {
 		driver.findElement(checkout).click();
-	}
-	
-	
-	
+	}	
 	public void clickProducts() {
 		driver.get(driver.findElement(products).getAttribute("href"));
 	}

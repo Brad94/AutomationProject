@@ -2,9 +2,11 @@ package Automation.Project;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
@@ -20,21 +22,18 @@ public class App {
 	ExtentReports report;
 	ExtentTest test;
 	WebDriver driver;
-
 	Login loginPage;
-
-	Home homePage;
-	
+	Home homePage;	
 	Contact contactPage;
 
 	@BeforeClass()
 	public void setup(){
 		report = new ExtentReports(
-				"C:\\Users\\Administrator\\Documents\\Eclipse\\Project\\automationreport.html",true);
+				"C:\\Users\\BjPol\\Documents\\Eclipse\\AutomationProject\\automationreport.html",true);
 	}
 	
 	public String getPass() throws IOException {
-		String fileName = "C:\\Users\\Administrator\\Documents\\Eclipse\\Project\\pass.txt";
+		String fileName = "C:\\Users\\BjPol\\Documents\\Eclipse\\AutomationProject\\pass.txt";
 		String passFile = "";
 		try{
 			ReadFile file = new ReadFile(fileName);
@@ -51,13 +50,13 @@ public class App {
 	@Test(priority = 1, enabled = true)
 	public void testHomeToContact() {
 		report = new ExtentReports(
-				"C:\\Users\\Administrator\\Documents\\Eclipse\\Project\\automationreport.html",
+				"C:\\Users\\BjPol\\Documents\\Eclipse\\AutomationProject\\automationreport.html",
 				true);
 		//System.setProperty("webdriver.gecko.driver",
 		//		"..\\SeleniumFiles\\Selenium\\geckodriver.exe");
 		test = report.startTest("Home to Contact");
 		System.setProperty("webdriver.chrome.driver",
-				"..\\SeleniumFiles\\Selenium\\chromedriver.exe");
+				"C:\\Users\\BjPol\\Documents\\Eclipse\\AutomationProject\\SeleniumFiles\\Selenium\\chromedriver.exe");
 		//driver = new FirefoxDriver();
 		driver = new ChromeDriver();
 		test.log(LogStatus.INFO, "Browser started");
@@ -69,40 +68,40 @@ public class App {
 		
 		contactPage = new Contact(driver);
 		
-		String subjectText = contactPage.getSubjectHeading();
-		String emailText = contactPage.getEmailTextBoxText();
-		String orderText = contactPage.getOrderTextBoxText();
-		String messageText = contactPage.getMessageTextBoxText();
-		
 		contactPage.selectSubjectHeading();
-		if (subjectText.equals("Webmaster")) {
+		String subjectText = contactPage.getSubjectHeading();
+		if (subjectText.contains("Webmaster")) {
 			test.log(LogStatus.PASS, "verify contact email input");
 		} else {
 			test.log(LogStatus.FAIL, "verify contact email input");
 		}
 		
 		contactPage.getEmailInput("bradley.pollard@qa.com");
-		if (emailText.equals("bradley.pollard@qa.com")) {
+		String emailText = driver.findElement(By.name("from")).getAttribute("value");
+		if (emailText.contains("bradley.pollard@qa.com")) {
 			test.log(LogStatus.PASS, "verify contact email input");
 		} else {
 			test.log(LogStatus.FAIL, "verify contact email input");
 		}
 		
 		contactPage.getOrderInput("12345");
-		if (orderText.equals("12345")) {
+		String orderText = driver.findElement(By.name("id_order")).getAttribute("value");
+		if (orderText.contains("12345")) {
 			test.log(LogStatus.PASS, "verify contact order input");
 		} else {
 			test.log(LogStatus.FAIL, "verify contact order input");
 		}
 		
 		contactPage.getMessageInput("Hi");
+		String messageText = contactPage.getMessageTextBoxText();
 		if (messageText.equals("Hi")) {
 			test.log(LogStatus.PASS, "verify contact message input");
 		} else {
+			System.out.println("Er" + messageText);
 			test.log(LogStatus.FAIL, "verify contact message input");
+
 		}
 		report.endTest(test);
-	//	report.flush();
 		
 	}
 	
@@ -112,12 +111,9 @@ public class App {
 
 		homePage = new Home(driver);
 		loginPage = new Login(driver);
-		
-		//String emailInputText = loginPage.getEmailTextBoxText();
-		//String passwordInputText = loginPage.getPasswordTextBoxText();
-		
+				
 		String homePageTitle = homePage.getTitle();
-		if (homePageTitle.equals("My Store")) {
+		if (homePageTitle.contains("My Store")) {
 			test.log(LogStatus.PASS, "verify page title");
 		} else {
 			test.log(LogStatus.FAIL, "verify page title");
@@ -126,20 +122,22 @@ public class App {
 		homePage.clickLogin();
 
 		loginPage.getEmailInput("Bradley.pollard@qa.com");
-//		if (emailInputText.equals("Bradley.pollard@qa.com")) {
-//			test.log(LogStatus.PASS, "verify login email input");
-//		} else {
-//			test.log(LogStatus.FAIL, "verify login email input");
-//		}
+		String emailInputText = loginPage.getEmailTextBoxText();
+		if (emailInputText.equals("Bradley.pollard@qa.com")) {
+			test.log(LogStatus.PASS, "verify login email input");
+		} else {
+			test.log(LogStatus.FAIL, "verify login email input");
+		}
 		
 		String pass = getPass();
 		
 		loginPage.getPasswordInput(pass);
-//		if (passwordInputText.equals(pass)) {
-//			test.log(LogStatus.PASS, "verify login password input");
-//		}else {
-//			test.log(LogStatus.FAIL, "verify login password input");
-//		}
+		String passwordInputText = loginPage.getPasswordTextBoxText();
+		if (passwordInputText.equals(pass)) {
+			test.log(LogStatus.PASS, "verify login password input");
+		}else {
+			test.log(LogStatus.FAIL, "verify login password input");
+		}
 
 		loginPage.submitLogin();
 		
@@ -154,9 +152,8 @@ public class App {
 		
 		homePage = new Home(driver);
 		
-		String newsletterText = homePage.getNewletterTextBoxText();
-
 		homePage.getNewletterTextBox("bradley.pollard@qa.com");
+		String newsletterText = homePage.getNewletterTextBoxText();
 		if (newsletterText.equals("bradley.pollard@qa.com")) {
 			test.log(LogStatus.PASS, "verify newsletter input");
 		} else {

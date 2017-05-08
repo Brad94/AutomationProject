@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28819" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:19Z">
+  <suite name="Default suite" duration-ms="20636" started-at="2017-05-08T00:20:47Z" finished-at="2017-05-08T00:21:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28819" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:19Z">
+    <test name="Default test" duration-ms="20636" started-at="2017-05-08T00:20:47Z" finished-at="2017-05-08T00:21:08Z">
       <class name="Automation.Project.App">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Automation.Project.App@184cf7cf]" name="setup" is-config="true" duration-ms="290" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T16:59:50Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Automation.Project.App@3ffc5af1]" name="setup" is-config="true" duration-ms="287" started-at="2017-05-08T01:20:47Z" finished-at="2017-05-08T01:20:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testHomeToContact()[pri:1, instance:Automation.Project.App@184cf7cf]" name="testHomeToContact" duration-ms="13517" started-at="2017-05-05T16:59:50Z" finished-at="2017-05-05T17:00:04Z">
+        <test-method status="PASS" signature="testHomeToContact()[pri:1, instance:Automation.Project.App@3ffc5af1]" name="testHomeToContact" duration-ms="9816" started-at="2017-05-08T01:20:47Z" finished-at="2017-05-08T01:20:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomeToContact -->
-        <test-method status="PASS" signature="testHomeToLoginandLogout()[pri:2, instance:Automation.Project.App@184cf7cf]" name="testHomeToLoginandLogout" duration-ms="12014" started-at="2017-05-05T17:00:04Z" finished-at="2017-05-05T17:00:16Z">
+        <test-method status="PASS" signature="testHomeToLoginandLogout()[pri:2, instance:Automation.Project.App@3ffc5af1]" name="testHomeToLoginandLogout" duration-ms="7886" started-at="2017-05-08T01:20:57Z" finished-at="2017-05-08T01:21:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomeToLoginandLogout -->
-        <test-method status="PASS" signature="testHomeNewsletter()[pri:3, instance:Automation.Project.App@184cf7cf]" name="testHomeNewsletter" duration-ms="2959" started-at="2017-05-05T17:00:16Z" finished-at="2017-05-05T17:00:19Z">
+        <test-method status="PASS" signature="testHomeNewsletter()[pri:3, instance:Automation.Project.App@3ffc5af1]" name="testHomeNewsletter" duration-ms="2618" started-at="2017-05-08T01:21:05Z" finished-at="2017-05-08T01:21:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomeNewsletter -->
